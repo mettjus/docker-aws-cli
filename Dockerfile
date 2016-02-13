@@ -1,5 +1,5 @@
-FROM gliderlabs/alpine:3.1
-MAINTAINER Jean Mertz <jean@blendle.com>
+FROM gliderlabs/alpine:3.3
+MAINTAINER Mettjus <karel291180@gmail.com>
 
 WORKDIR /root
 VOLUME /root/.aws
@@ -7,5 +7,6 @@ VOLUME /root/.aws
 ENTRYPOINT ["/usr/bin/aws"]
 CMD ["help"]
 
-RUN apk-install less=475-r0 groff=1.22.3-r0 py-pip=1.5.6-r2
-RUN pip install awscli==1.7.26
+RUN apk-install less=481-r2 groff=1.22.3-r1 py-pip=7.1.2-r0
+RUN pip install --upgrade pip
+RUN pip install awscli==1.10.4
